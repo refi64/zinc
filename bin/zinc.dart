@@ -320,7 +320,7 @@ class ZincInterpreter {
       if (scope[name] != null) { return scope[name]; }
     }
     if (name == 'S') {
-      var input = stdin.readLineSync();
+      var input = stdin.readLineSync() ?? '';
       var list = new List.from(input.codeUnits.map((c) =>
         new IntObj(int.parse(new String.fromCharCodes([c])))));
       setv('S', new SetObj(list));
