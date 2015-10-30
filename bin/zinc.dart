@@ -80,7 +80,7 @@ class Magicop extends Anyop {
     } else if (op == 'join') {
       if (x is! SetObj) { throw new Error('can only join set'); }
       if (y is! IntObj) { throw new Error('can only join set with int'); }
-      String res;
+      String res = '';
       for (Obj obj in x.vals(interp)) {
         if (obj is! IntObj) { throw new Error('joining set must contain ints'); }
         res += obj.value.toString();
